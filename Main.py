@@ -3,7 +3,7 @@
 """
 Created on Tue May 23 21:19:29 2023
 
-This is VERY VERY basic use of random module.
+This is VERY VERY basic use of the random module.
 
 Game of Chance!
 Simple life chaos generator :P
@@ -48,7 +48,7 @@ randomcounter = []
 
 if ready == "y":
     Checked = AskType()
-    if Checked == 1:This equals to 1.
+    if Checked == 1:
         while stastified == "n":
             RunTime = RandomExecute()
             randomcounter.append(RunTime)
