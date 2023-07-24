@@ -26,7 +26,7 @@ def AskType():
     print("1. Statisfication Check \n")
     print("2. Times of running \n")
     print("3. Run based on the total times of the 5 sequences randomly selected from any of 777 decimal points of pi (eg. 14159 or 97932 or 97494). \n")
-    CheckType = int(input("Which one? \n"))
+    CheckType = int(input("Which one (1-3)? \n"))
     return CheckType
 
 def RandomExecute():
@@ -47,10 +47,8 @@ def Summary(totalrun):
     print("Have a nice day! Goodbye.")
 
 stastified = "n"
-ready = input("Are you ready to let me decide whatever in your mind right now? (Y/n) \n").lower()
-
+ready = input("Are you ready to let me decide what's in your mind right now? (Y/n) \n").lower()
 randomcounter = []
-
 if ready == "y":
     Checked = AskType()
     if Checked == 1:
@@ -79,6 +77,8 @@ if ready == "y":
         Summary(randomcounter)
 if ready == "n":
     print("Bye! :)")
+else:
+    print("Y/N only!")
 
 
 
