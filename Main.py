@@ -75,7 +75,7 @@ if ready == "y":
             randomcounter.append(RunTime)
             TimestoRun -= 1
         Summary(randomcounter)
-if ready == "n":
+elif ready == "n":
     print("Bye! :)")
 else:
     print("Y/N only!")
