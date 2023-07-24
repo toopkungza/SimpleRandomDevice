@@ -46,22 +46,23 @@ def Summary(totalrun):
     print("Total counts for No/0: ", totalrun.count(0))            
     print("Have a nice day! Goodbye.")
 
-SatisfiedCheck = "n"
 ready = input("Are you ready to let me decide what's in your mind right now? (Y/n) \n").lower()
 randomcounter = []
 if ready == "y":
     Checked = AskType()
     if Checked == 1:
-        while SatisfiedCheck == "n":
+        SatisfiedCheck = False
+        while SatisfiedCheck == False:
             RunTime = RandomExecute()
             randomcounter.append(RunTime)
             SatisfiedCheck = input("Satisfied? (y/n) \n").lower()
             if SatisfiedCheck == "y":
+                SatisfiedCheck = True
                 Summary(randomcounter)
             else:
-                stastified = "n"
+                SatisfiedCheck = False
     elif Checked == 2:
-        TimestoRun = int(input("How many times do you want me to run?"))
+        TimestoRun = int(input("How many times do you want me to run? \n"))
         while TimestoRun != 0:
             RunTime = RandomExecute()
             randomcounter.append(RunTime)
