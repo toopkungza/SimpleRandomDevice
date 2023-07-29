@@ -46,35 +46,36 @@ def Summary(totalrun):
     print("Total counts for No/0: ", totalrun.count(0))            
     print("Have a nice day! Goodbye.")
 
-ready = input("Are you ready to let me decide what's in your mind right now? (Y/n) \n").lower()
-randomcounter = []
-if ready == "y":
-    Checked = AskType()
-    if Checked == 1:
-        SatisfiedCheck = False
-        while SatisfiedCheck == False:
-            RunTime = RandomExecute()
-            randomcounter.append(RunTime)
-            SatisfiedCheck = input("Satisfied? (y/n) \n").lower()
-            if SatisfiedCheck == "y":
-                SatisfiedCheck = True
-                Summary(randomcounter)
-            else:
-                SatisfiedCheck = False
-    elif Checked == 2:
-        TimestoRun = int(input("How many times do you want me to run? \n"))
-        while TimestoRun != 0:
-            RunTime = RandomExecute()
-            randomcounter.append(RunTime)
-            TimestoRun -= 1
-        Summary(randomcounter)
-    elif Checked == 3:
-        randompi = GetRandomPiSeq(5)
-        TimestoRun = int(randompi)
-        while TimestoRun != 0:
-            RunTime = RandomExecute()
-            randomcounter.append(RunTime)
-            TimestoRun -= 1
-        Summary(randomcounter)
-if ready == "n":
-    print("Bye! :)")
+if __name__ == "__main__":
+    ready = input("Are you ready to let me decide what's in your mind right now? (Y/n) \n").lower()
+    randomcounter = []
+    if ready == "y":
+        Checked = AskType()
+        if Checked == 1:
+            SatisfiedCheck = False
+            while SatisfiedCheck == False:
+                RunTime = RandomExecute()
+                randomcounter.append(RunTime)
+                SatisfiedCheck = input("Satisfied? (y/n) \n").lower()
+                if SatisfiedCheck == "y":
+                    SatisfiedCheck = True
+                    Summary(randomcounter)
+                else:
+                    SatisfiedCheck = False
+        elif Checked == 2:
+            TimestoRun = int(input("How many times do you want me to run? \n"))
+            while TimestoRun != 0:
+                RunTime = RandomExecute()
+                randomcounter.append(RunTime)
+                TimestoRun -= 1
+            Summary(randomcounter)
+        elif Checked == 3:
+            randompi = GetRandomPiSeq(5)
+            TimestoRun = int(randompi)
+            while TimestoRun != 0:
+                RunTime = RandomExecute()
+                randomcounter.append(RunTime)
+                TimestoRun -= 1
+            Summary(randomcounter)
+    if ready == "n":
+        print("Bye! :)")
