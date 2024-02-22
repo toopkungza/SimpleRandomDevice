@@ -9,6 +9,8 @@ Game of chance is pretty much like the game of life!
 - Simple life chaos generator
 
 @author: tkz
+
+TEST20240222
 """
 import random
 
