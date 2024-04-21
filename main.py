@@ -59,7 +59,6 @@ class GoldenRatioPiRandom:
             #Utilize golden ratio and pi random function as indices
             j = int(self.random() * (i+1))
             shuffled_data[i], shuffled_data[j] = shuffled_data[j], shuffled_data[i]
-        
         return shuffled_data
 
 def AskType():
@@ -72,7 +71,7 @@ def AskType():
 
 def RandomExecute():
     randomx = GoldenRatioPiRandom().random()
-    if randomx > 0.5:
+    if randomx > 0.50:
         print("Yes/Left/Start/Go ahead. This equals to 1. \n")
         result = 1
     else:
@@ -84,7 +83,7 @@ def Summary(totalrun):
     print("Total times I ran: ", len(totalrun))
     print("Total counts for Yes/1: ", totalrun.count(1))
     print("Total counts for No/0: ", totalrun.count(0))            
-    print("Have a nice day! Goodbye.")
+    print("Have a nice day! Goodbye. :)")
 
 if __name__ == "__main__":
     ready = input("Are you ready to let me decide what's on your mind right now? (Y/n) \n").lower()
@@ -120,7 +119,7 @@ if __name__ == "__main__":
                 i += 1
                 TimestoRun -= 1
             ReadyShuffleCheck = input("Are you ready to shuffle the items on your list? (y/n) \n").lower()
-            if ReadyShuffleCheck.lower() == "y":
+            if ReadyShuffleCheck == "y":
                 result = GoldenRatioPiRandom().shuffle(ListItem)
                 print(result)
     if ready == "n":
