@@ -6,7 +6,7 @@ Created on Tue May 23 21:19:29 2023
 Basic implementation of "random" module
 
 Game of chance is pretty much like the game of life!
-- Simple life chaos generator
+- Simple life/event chaos generator
 
 IMPROVEMENT NOTES:
     1. Create a class for a more flexibility of code implementation (20240421)
