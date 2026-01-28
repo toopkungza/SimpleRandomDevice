@@ -1,8 +1,7 @@
 🎲 Sophisticated Yes/No Oracle
 
-A mathematically sophisticated binary decision generator that outputs only Yes (1) or No (0). Behind the simple output lies a deep pipeline of cryptographic entropy, chaos theory, prime number operations, and transcendental mathematics.
+A mathematically sophisticated binary decision generator that outputs only Yes (1) or No (0). Behind the simple output lies a deep pipeline of cryptographic entropy, chaos theory, prime number operations, and transcendental mathematics. With the help of Claude Code (Claude Opus 4.5) - 28 January 2025
 > *"Sometimes the most profound answers are the simplest: Yes or No."*
-With the help of Claude Code (Claude Opus 4.5) - 28 January 2025
 ---
 ✨ Features
 
@@ -470,51 +469,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-`pyproject.toml`
-```toml
-\\\[build-system]
-requires = \\\["setuptools>=61.0"]
-build-backend = "setuptools.build\\\_meta"
-
-\\\[project]
-name = "sophisticated-oracle"
-version = "1.0.0"
-description = "A mathematically sophisticated Yes/No decision generator"
-readme = "README.md"
-license = {text = "MIT"}
-requires-python = ">=3.10"
-authors = \\\[
-    {name = "Your Name", email = "your.email@example.com"}
-]
-keywords = \\\["random", "decision", "oracle", "chaos", "mathematics"]
-classifiers = \\\[
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering :: Mathematics",
-]
-
-\\\[project.urls]
-Homepage = "https://github.com/yourusername/sophisticated-oracle"
-Repository = "https://github.com/yourusername/sophisticated-oracle"
-Issues = "https://github.com/yourusername/sophisticated-oracle/issues"
-
-\\\[project.scripts]
-oracle = "oracle:main"
-
-\\\[tool.pytest.ini\\\_options]
-testpaths = \\\["tests"]
-python\\\_files = \\\["test\\\_\\\*.py"]
-
-\\\[tool.black]
-line-length = 88
-target-version = \\\['py310']
-
-\\\[tool.isort]
-profile = "black"
-```
-This gives you a complete, professional GitHub repository structure! 🎲✨
