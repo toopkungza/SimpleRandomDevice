@@ -1,15 +1,17 @@
 🎲 Sophisticated Yes/No Oracle
+
 A mathematically sophisticated binary decision generator that outputs only Yes (1) or No (0). Behind the simple output lies a deep pipeline of cryptographic entropy, chaos theory, prime number operations, and transcendental mathematics.
 > *"Sometimes the most profound answers are the simplest: Yes or No."*
 ---
 ✨ Features
-**Cryptographically Secure** — Built on `os.urandom()` system entropy
-**Chaos Theory** — Logistic, Hénon, Arnold cat maps, and more
-**Prime Mathematics** — Ulam spiral selection and prime harmonic series
-**Transcendental Functions** — Riemann zeta, gamma function approximations
-**Mathematical Constants** — φ, π, e, γ, Feigenbaum constants, and others
-**Zero Dependencies** — Pure Python standard library only
-**Simple Output** — Just `1` (Yes) or `0` (No)
+
+- Cryptographically Secure: Built on `os.urandom()` system entropy
+- Chaos Theory: Logistic, Hénon, Arnold cat maps, and more
+- Prime Mathematics: — Ulam spiral selection and prime harmonic series
+- Transcendental Functions: — Riemann zeta, gamma function approximations
+- Mathematical Constants: φ, π, e, γ, Feigenbaum constants, and others
+- Zero Dependencies: Pure Python standard library only
+- Simple Output: Just `1` (Yes) or `0` (No)
 ---
 🚀 Quick Start
 Installation
