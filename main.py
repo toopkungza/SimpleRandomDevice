@@ -446,6 +446,11 @@ class SophisticatedOracle:
     - Unpredictable (cryptographically secure base)
     - Well-distributed (sophisticated mixing)
     - Mathematically rich (multiple number-theoretic operations)
+    
+    # Recommended ranges
+    CHAOS_MIN, CHAOS_MAX, CHAOS_DEFAULT = 30, 200, 100
+    PRIME_MIN, PRIME_MAX, PRIME_DEFAULT = 10, 50, 20
+    ZETA_MIN, ZETA_MAX, ZETA_DEFAULT = 20, 100, 50
     """
     
     def __init__(
