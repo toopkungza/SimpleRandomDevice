@@ -17,7 +17,7 @@ A mathematically sophisticated binary decision generator that outputs only Yes (
 Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sophisticated-oracle.git
+git clone https://github.com/toopkungza/SimpleRandomDevice.git
 cd sophisticated-oracle
 
 # No dependencies to install — pure Python!
