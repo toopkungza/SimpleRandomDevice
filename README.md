@@ -53,6 +53,7 @@ Press Enter to consult the oracle (Ctrl+C to exit)...
 ```
 ---
 📖 Usage Examples
+
 Simple Decision
 ```python
 from oracle import ask
@@ -117,6 +118,7 @@ if oracle.no():
 ```
 ---
 🔬 How It Works
+
 The oracle processes entropy through multiple mathematical layers before producing a binary output.
 Pipeline Overview
 ```
@@ -215,6 +217,7 @@ Transcendental Functions:
 
 ---
 📊 Statistical Properties
+
 The oracle produces well-distributed binary outputs:
 ```python
 from oracle import SophisticatedOracle
@@ -298,6 +301,7 @@ if __name__ == '__main__':
 ```
 ---
 🤔 Philosophy
+
 Why So Complex for a Coin Flip?
 The complexity serves multiple purposes:
 Cryptographic Security — The base entropy is genuinely unpredictable
@@ -315,6 +319,7 @@ When Should I Use This?
 ❌ Scientific random sampling (use `numpy.random`)
 ---
 📜 API Reference
+
 Functions
 `ask() -> int`
 Returns a simple Yes (1) or No (0).
@@ -353,6 +358,7 @@ Attribute	Type	Description
 `chaos_iterations`	`int`	Chaos iterations used
 ---
 🤝 Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.
 Guidelines
 Code Style — Follow PEP 8
@@ -367,6 +373,7 @@ Ideas for Contributions
 [ ] Alternative threshold strategies (adaptive, weighted)
 ---
 📄 License
+
 This project is licensed under the MIT License — see the LICENSE file for details.
 ```
 MIT License
