@@ -2,6 +2,7 @@
 
 A mathematically sophisticated binary decision generator that outputs only Yes (1) or No (0). Behind the simple output lies a deep pipeline of cryptographic entropy, chaos theory, prime number operations, and transcendental mathematics.
 > *"Sometimes the most profound answers are the simplest: Yes or No."*
+> With the help of Claude Code (Claude Opus 4.5) - 28 January 2025
 ---
 ✨ Features
 
