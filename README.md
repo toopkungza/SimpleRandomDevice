@@ -71,9 +71,9 @@ result = oracle.decide()
 
 print(f"Answer: {result.answer}")           # "Yes" or "No"
 print(f"Decision: {result.decision}")       # 1 or 0
-print(f"Raw Value: {result.raw\\\_value}")     # 0.xxxxxxxxxx
-print(f"Entropy Sources: {result.entropy\\\_sources}")
-print(f"Chaos Iterations: {result.chaos\\\_iterations}")
+print(f"Raw Value: {result.raw_value}")     # 0.xxxxxxxxxx
+print(f"Entropy Sources: {result.entropy_sources}")
+print(f"Chaos Iterations: {result.chaos_iterations}")
 ```
 Custom Configuration
 ```python
@@ -81,9 +81,9 @@ from oracle import SophisticatedOracle
 
 # More chaos iterations = more mixing
 oracle = SophisticatedOracle(
-    chaos\\\_iterations=200,    # Default: 100
-    prime\\\_terms=30,          # Default: 20
-    zeta\\\_terms=100           # Default: 50
+    chaos_iterations=200,    # Default: 100
+    prime_terms=30,          # Default: 20
+    zeta_terms=100           # Default: 50
 )
 
 result = oracle.decide()
@@ -95,13 +95,13 @@ from oracle import SophisticatedOracle
 oracle = SophisticatedOracle()
 
 # Generate 10 decisions
-decisions = \\\[oracle.decide().decision for \\\_ in range(10)]
-print(decisions)  # \\\[1, 0, 1, 1, 0, 0, 1, 0, 1, 1]
+decisions = [oracle.decide().decision for _ in range(10)]
+print(decisions)  # [1, 0, 1, 1, 0, 0, 1, 0, 1, 1]
 
 # Count results
-yes\\\_count = sum(decisions)
-no\\\_count = len(decisions) - yes\\\_count
-print(f"Yes: {yes\\\_count}, No: {no\\\_count}")
+yes_count = sum(decisions)
+no_count = len(decisions) - yes_count
+print(f"Yes: {yes_count}, No: {no_count}")
 ```
 Boolean Convenience Methods
 ```python
@@ -124,7 +124,7 @@ Pipeline Overview
 │                      ENTROPY SOURCES                            │
 ├─────────────────────────────────────────────────────────────────┤
 │  os.urandom(32)     → Cryptographic randomness                  │
-│  time.time\\\_ns()     → Nanosecond timestamp                      │
+│  time.time_ns()     → Nanosecond timestamp                      │
 │  os.getpid()        → Process ID                                │
 │  id(object())       → Memory address (ASLR)                     │
 └──────────────────────────┬──────────────────────────────────────┘
@@ -187,30 +187,32 @@ Pipeline Overview
 ```
 ---
 🧮 Mathematical Components
-Chaos Functions
-Function	Formula	Behavior
-Logistic Map	xₙ₊₁ = r·xₙ·(1-xₙ)	Chaotic for r ≈ 4
-Tent Map	xₙ₊₁ = μ·min(xₙ, 1-xₙ)	Piecewise linear chaos
-Hénon Map	xₙ₊₁ = 1 - a·xₙ² + yₙ	2D strange attractor
-Sinusoidal Map	xₙ₊₁ = sin(π·xₙ)	Smooth chaotic map
-Gauss Map	xₙ₊₁ = exp(-6.2/xₙ²) + xₙ²	Mouse map
-Arnold Cat Map	(x,y) → (2x+y, x+y) mod 1	Area-preserving
-Mathematical Constants
-Constant	Symbol	Value	Significance
-Golden Ratio	φ	1.6180339...	Most irrational number
-Euler's Number	e	2.7182818...	Natural exponential base
-Pi	π	3.1415926...	Circle constant
-Euler-Mascheroni	γ	0.5772156...	Harmonic series limit
-Plastic Constant	ρ	1.3247179...	Root of x³ = x + 1
-Feigenbaum δ	δ	4.6692016...	Universal chaos constant
-Feigenbaum α	α	2.5029078...	Universal chaos constant
-Khinchin's Constant	K	2.6854520...	Continued fraction limit
-Silver Ratio	δₛ	2.4142135...	1 + √2
-Transcendental Functions
-Function	Purpose
-Riemann Zeta ζ(s)	Encodes prime number distribution
-Gamma Function Γ(x)	Generalizes factorials to real numbers
-Trigonometric Functions	Periodic mixing with sin, cos, tanh
+
+Chaos Functions:
+
+- Logistic Map	xₙ₊₁ = r·xₙ·(1-xₙ)	Chaotic for r ≈ 4
+- Tent Map	xₙ₊₁ = μ·min(xₙ, 1-xₙ)	Piecewise linear chaos
+- Hénon Map	xₙ₊₁ = 1 - a·xₙ² + yₙ	2D strange attractor
+- Sinusoidal Map	xₙ₊₁ = sin(π·xₙ)	Smooth chaotic map
+- Gauss Map	xₙ₊₁ = exp(-6.2/xₙ²) + xₙ²	Mouse map
+- Arnold Cat Map	(x,y) → (2x+y, x+y) mod 1	Area-preserving
+
+Mathematical Constants:
+- Golden Ratio	φ	1.6180339...	Most irrational number
+- Euler's Number	e	2.7182818...	Natural exponential base
+- Pi	π	3.1415926...	Circle constant
+- Euler-Mascheroni	γ	0.5772156...	Harmonic series limit
+- Plastic Constant	ρ	1.3247179...	Root of x³ = x + 1
+- Feigenbaum δ	δ	4.6692016...	Universal chaos constant
+- Feigenbaum α	α	2.5029078...	Universal chaos constant
+- Khinchin's Constant	K	2.6854520...	Continued fraction limit
+- Silver Ratio	δₛ	2.4142135...	1 + √2
+
+Transcendental Functions:
+- Riemann Zeta ζ(s)	Encodes prime number distribution
+- Gamma Function Γ(x)	Generalizes factorials to real numbers
+- Trigonometric Functions	Periodic mixing with sin, cos, tanh
+
 ---
 📊 Statistical Properties
 The oracle produces well-distributed binary outputs:
@@ -219,11 +221,11 @@ from oracle import SophisticatedOracle
 from collections import Counter
 
 oracle = SophisticatedOracle()
-results = \\\[oracle.decide().decision for \\\_ in range(10000)]
+results = [oracle.decide().decision for _ in range(10000)]
 
 counter = Counter(results)
-print(f"Yes (1): {counter\\\[1]} ({counter\\\[1]/100:.1f}%)")
-print(f"No  (0): {counter\\\[0]} ({counter\\\[0]/100:.1f}%)")
+print(f"Yes (1): {counter[1]} ({counter[1]/100:.1f}%)")
+print(f"No  (0): {counter[0]} ({counter[0]/100:.1f}%)")
 ```
 Expected output (approximately):
 ```
@@ -237,14 +239,6 @@ sophisticated-oracle/
 ├── oracle.py           # Main oracle implementation
 ├── README.md           # This file
 ├── LICENSE             # MIT License
-├── tests/
-│   ├── \\\_\\\_init\\\_\\\_.py
-│   ├── test\\\_oracle.py  # Unit tests
-│   └── test\\\_chaos.py   # Chaos function tests
-└── examples/
-    ├── basic\\\_usage.py
-    ├── batch\\\_decisions.py
-    └── custom\\\_config.py
 ```
 ---
 🧪 Testing
@@ -256,7 +250,7 @@ python -m pytest tests/
 python -m pytest tests/ --cov=oracle --cov-report=html
 
 # Run specific test file
-python -m pytest tests/test\\\_oracle.py -v
+python -m pytest tests/test_oracle.py -v
 ```
 Sample Test
 ```python
@@ -265,41 +259,41 @@ from oracle import SophisticatedOracle, ask
 
 class TestOracle(unittest.TestCase):
   
-    def test\\\_decision\\\_is\\\_binary(self):
+    def test_decision_is_binary(self):
         """Decisions should only be 0 or 1."""
         oracle = SophisticatedOracle()
-        for \\\_ in range(100):
+        for _ in range(100):
             result = oracle.decide()
-            self.assertIn(result.decision, \\\[0, 1])
+            self.assertIn(result.decision, [0, 1])
   
-    def test\\\_answer\\\_matches\\\_decision(self):
+    def test_answer_matches_decision(self):
         """Answer string should match decision integer."""
         oracle = SophisticatedOracle()
-        for \\\_ in range(100):
+        for _ in range(100):
             result = oracle.decide()
             if result.decision == 1:
                 self.assertEqual(result.answer, "Yes")
             else:
                 self.assertEqual(result.answer, "No")
   
-    def test\\\_raw\\\_value\\\_in\\\_range(self):
-        """Raw value should be in \\\[0, 1)."""
+    def test_raw_value_in_range(self):
+        """Raw value should be in [0, 1)."""
         oracle = SophisticatedOracle()
-        for \\\_ in range(100):
+        for _ in range(100):
             result = oracle.decide()
-            self.assertGreaterEqual(result.raw\\\_value, 0.0)
-            self.assertLess(result.raw\\\_value, 1.0)
+            self.assertGreaterEqual(result.raw_value, 0.0)
+            self.assertLess(result.raw_value, 1.0)
   
-    def test\\\_distribution\\\_roughly\\\_equal(self):
+    def test_distribution_roughly_equal(self):
         """Distribution should be approximately 50/50."""
         oracle = SophisticatedOracle()
-        results = \\\[oracle.decide().decision for \\\_ in range(1000)]
-        yes\\\_ratio = sum(results) / len(results)
+        results = [oracle.decide().decision for _ in range(1000)]
+        yes_ratio = sum(results) / len(results)
         # Allow 10% deviation from perfect 50/50
-        self.assertGreater(yes\\\_ratio, 0.4)
-        self.assertLess(yes\\\_ratio, 0.6)
+        self.assertGreater(yes_ratio, 0.4)
+        self.assertLess(yes_ratio, 0.6)
 
-if \\\_\\\_name\\\_\\\_ == '\\\_\\\_main\\\_\\\_':
+if __name__ == '__main__':
     unittest.main()
 ```
 ---
@@ -327,36 +321,36 @@ Returns a simple Yes (1) or No (0).
 ```python
 decision = ask()  # Returns 0 or 1
 ```
-`ask\\\_verbose() -> OracleResult`
+`ask_verbose() -> OracleResult`
 Returns full decision details.
 ```python
-result = ask\\\_verbose()
+result = ask_verbose()
 print(result.decision)   # 0 or 1
 print(result.answer)     # "Yes" or "No"
-print(result.raw\\\_value)  # Float in \\\[0, 1)
+print(result.raw_value)  # Float in [0, 1)
 ```
 Classes
 `SophisticatedOracle`
 Main oracle class with configurable parameters.
 ```python
 oracle = SophisticatedOracle(
-    chaos\\\_iterations=100,  # Chaos function iterations
-    prime\\\_terms=20,        # Prime harmonic terms
-    zeta\\\_terms=50          # Zeta function terms
+    chaos_iterations=100,  # Chaos function iterations
+    prime_terms=20,        # Prime harmonic terms
+    zeta_terms=50          # Zeta function terms
 )
 
 result = oracle.decide()  # Returns OracleResult
-is\\\_yes = oracle.yes()     # Returns bool
-is\\\_no = oracle.no()       # Returns bool
+is_yes = oracle.yes()     # Returns bool
+is_no = oracle.no()       # Returns bool
 ```
 `OracleResult`
 Dataclass containing decision results.
 Attribute	Type	Description
 `decision`	`int`	0 or 1
 `answer`	`str`	"Yes" or "No"
-`raw\\\_value`	`float`	Underlying random value
-`entropy\\\_sources`	`int`	Number of entropy sources
-`chaos\\\_iterations`	`int`	Chaos iterations used
+`raw_value`	`float`	Underlying random value
+`entropy_sources`	`int`	Number of entropy sources
+`chaos_iterations`	`int`	Chaos iterations used
 ---
 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -410,40 +404,6 @@ Discussions — GitHub Discussions
 <div align="center">
 May your decisions be wise, even when they're random. 🎲✨
 </div>
-```
----
-Additional Files
-`.gitignore`
-```gitignore
-# Byte-compiled / optimized / DLL files
-\\\_\\\_pycache\\\_\\\_/
-\\\*.py\\\[cod]
-\\\*$py.class
-
-# Virtual environments
-venv/
-env/
-.env/
-
-# IDE
-.vscode/
-.idea/
-\\\*.swp
-\\\*.swo
-
-# Testing
-.pytest\\\_cache/
-.coverage
-htmlcov/
-
-# Distribution
-dist/
-build/
-\\\*.egg-info/
-
-# OS
-.DS\\\_Store
-Thumbs.db
 ```
 `LICENSE`
 ```
